@@ -5,8 +5,6 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "rest".
- *
  * @property int $id
  * @property string $name
  * @property string $address
@@ -23,9 +21,7 @@ class Rest extends \yii\db\ActiveRecord
         return 'rest';
     }
 
-    /**
-     * {@inheritdoc}
-     */
+
     public function rules()
     {
         return [
@@ -36,9 +32,7 @@ class Rest extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
+
     public function attributeLabels()
     {
         return [

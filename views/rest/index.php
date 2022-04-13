@@ -3,9 +3,6 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
-/* @var $this yii\web\View */
-/* @var $searchModel app\models\searchRest */
-/* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Добавить';
 $this->params['breadcrumbs'][] = $this->title;
@@ -18,15 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Добавить', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            //'id',
             'name',
             'address',
             'updatet_at',

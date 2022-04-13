@@ -9,14 +9,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-/**
- * RestController implements the CRUD actions for Rest model.
- */
 class RestController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
+    // Поведение . Удаление только методом post
     public function behaviors()
     {
         return [
@@ -29,10 +24,7 @@ class RestController extends Controller
         ];
     }
 
-    /**
-     * Lists all Rest models.
-     * @return mixed
-     */
+  // Метод главной страница
     public function actionIndex()
     {
         $searchModel = new searchRest();
@@ -44,7 +36,7 @@ class RestController extends Controller
         ]);
     }
 
-    
+    // Метод страницы rest
     public function actionView($id)
     {
         return $this->render('view', [
@@ -52,7 +44,7 @@ class RestController extends Controller
         ]);
     }
 
-    
+    //Метод стариницы добавления
     public function actionCreate()
     {
         
@@ -72,7 +64,7 @@ class RestController extends Controller
         ]);
     }
 
-    
+    // метод страницы изменения
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -94,7 +86,7 @@ class RestController extends Controller
         ]);
     }
 
-
+    // метод удаления
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -102,7 +94,7 @@ class RestController extends Controller
         return $this->redirect(['index']);
     }
 
-
+    // вызов из БД через модель строку по id
     protected function findModel($id)
     {
         if (($model = Rest::findOne($id)) !== null) {
